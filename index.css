@@ -1,0 +1,731 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+/*Scegliere un nuovo font*/
+
+/*Definizioni*/
+:root {
+    --sabbia: rgba(223,208,188,255);
+    --nero: rgba(60,59,58,255);
+    --bianco: rgba(255,255,255,255);
+    --marrone: rgba(95,74,69,255);
+    --title-font: "Playfair Display", serif;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/*NAV-BAR*/
+#nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    gap: 2vw;
+    height: 10vh;
+
+    font-family: var(--title-font);
+    background-color: var(--sabbia);
+    color: var(--nero);
+    
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); 
+    z-index: 10;
+    padding: 1vh 2vw;
+}
+
+#site-name {
+    font-size: 4vh;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0; 
+    padding: 0;
+    letter-spacing: 4px;
+}
+
+#menu-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2vh; 
+    gap: 2vw;
+}
+
+.menu-item {
+    cursor: pointer;
+}
+
+#social-icons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icon {
+    cursor: pointer;
+    padding: 1vw;
+}
+
+#curtain-menu {
+    display:none;
+}
+
+#mobile-menu-container {
+    display: none;
+}
+
+
+
+/*MOBILE NAV-BAR*/
+@media (max-width: 500px) {
+
+    html {
+        scroll-behavior: smooth;
+      }
+
+    #nav-container {
+        justify-content: space-between;
+        height: 7%;
+    }
+
+    #site-name {
+        font-size: 3.5vh;
+        color: var(--text-color)
+    }
+
+    #menu-container {
+        display: none;
+    }
+
+    #social-icons-container {
+        display: none;
+    }
+    
+    #curtain-menu {
+        display: flex;
+        width: 2vw;
+        height: 4vh;
+        margin-right: 5vw;
+    }
+
+    #mobile-menu-container {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(229,233,253,255) ;
+        width: 100vw;
+        height: 100vh;
+        gap: 5vh;
+        font-size: 4.5vh;
+        font-family: var(--features-text);
+        font-weight: 500;
+    }
+
+    #mobile-menu-container #social-icons-container {
+        display: block;
+        padding-top: 15vh;
+    }    
+
+}
+
+/*HEADER SECTION*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--sabbia);
+}
+
+#header-container {
+  height: 80vh;
+  width: 100%;
+  background-color: var(--bianco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+#title {
+  font-family: var(--title-font);
+  font-size: 4rem;
+  color: var(--marrone);
+  margin-bottom: 40px;
+}
+
+#link-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+#link-container a {
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 2px solid var(--marrone);
+  border-radius: 40px;
+  color: var(--marrone);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+#link-container a:hover {
+  background-color: var(--marrone);
+  color: var(--bianco);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/*Sezione HEADER MOBILE*/
+@media (max-width: 500px) {
+ 
+    #header-container {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
+        height: 100vh;
+        width: 100vw;
+    }
+
+
+
+    #title {
+        display: flex;
+        justify-content: flex-end;
+        z-index: 2;
+        font-size: 400%;
+        font-weight: bold;
+        padding-right: 4vw;
+    }
+
+    #button-container {
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+        font-size: 2.5vh;
+        font-weight: 100;
+        margin-top: -4vh;
+    }
+
+    .button {
+        padding: 3% 10%;
+    }
+
+    .button:active {
+        background-color: var(--button-hover);
+    }
+
+}
+
+/*Features bar*/
+
+#features-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-direction: column;
+    font-family: var(--title-font);
+    height: 22vh;
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+#features-text {
+    margin-top: 5vh;
+    color: rgb(235,150,245);
+    font-style: oblique;
+}
+
+#logos-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4.5vw;
+    padding: 2vh;
+}
+
+.logo {
+    cursor: pointer;
+    height: 15vh;
+    width: auto;
+}
+
+/*Features bar MOBILE*/
+@media (max-width: 500px) {
+
+    #features-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        background-color: var(--text-color);
+        height: 40vh;
+        font-size: 3vh;
+        font-weight: bold;
+        padding-bottom: 5vh;
+        flex-shrink: 1;
+        margin-top: 10%;
+    }
+
+    #features-text {
+        margin-top: 5vh;
+        color: rgb(235,150,245);
+        font-style: oblique;
+    }
+
+    #logos-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 4.5vw;
+        padding: 2vh;
+        flex-shrink: 1;
+    }
+
+    .logo {
+        cursor: pointer;
+        height: 10vh;
+        width: auto;
+    }
+}
+
+/*Travel resourses section*/
+
+#travel-resourses-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color:rgba(229,233,253,255);
+    padding-bottom: 4vh;
+    border-bottom: 5px solid  var(--text-color);
+}
+
+.t-r-title {
+    font-family: "Raleway", sans-serif;
+    font-size: 5vw;
+    font-weight: 300;
+}
+
+.t-r-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: -5vh;
+    gap: 2vw;
+    justify-content: center; 
+    align-content: center; 
+    width: 100%;
+}
+
+.t-r-grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1vh;
+    width: 100%;
+}
+
+.t-r-g-title {
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-decoration: underline wavy;
+    text-decoration-color: rgba(245,152,255,255);
+    cursor: pointer;
+    font-family: "Raleway", sans-serif; 
+}
+
+.t-r-grid-item img {
+    height: 35vh;
+    width: auto;
+    cursor: pointer;
+    font-family: "Afacad", sans-serif;
+    justify-self: center; 
+}
+
+.t-r-p {
+    font-family: "Afacad", sans-serif;
+    text-align: center;
+}
+
+.t-r-g-button {
+    cursor: pointer;
+    color: white;
+    background-color: var(--text-color);
+    border-radius: 100px;
+    padding: 3vh 3vw;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif; 
+}
+
+.t-r-g-button:hover {
+    background-color: rgba(42, 47, 141, 255); 
+    transform: scale(1.05);
+}
+
+.show-buttons {
+    display: none;
+}
+
+@media (max-width: 500px)  {
+
+    #travel-resourses-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 3vw;
+    }
+
+    .t-r-grid-item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    .t-r-grid-item[data-type="mobile-hidden"] {
+        display: none;
+    }
+    
+    .show-buttons {
+        display: block;
+        background-color: transparent; 
+        color: var(--features-text); 
+        border: 2px solid var(--button-hover); 
+        border-radius: 100px;
+        padding: 2vh 2vw;
+        font-family: "Raleway", sans-serif; 
+        width: 25vw;
+    }
+
+    #show-more {
+        display: block;
+    }
+
+    #show-less {
+        display: none;
+    }
+    
+    #show-more:hover {
+        background-color: var(--button-hover); /* Cambia colore al passaggio */
+        color: white; /* Testo bianco per contrasto */
+    }
+
+    .t-r-title {
+        font-size: 9vw;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .t-r-grid-container {
+        display: flex;;
+        flex-wrap: wrap;
+        margin-top: 2%;
+        padding-bottom: 5%;
+        justify-content: center; 
+        align-content: center; 
+        gap: 5vh;
+    }
+
+
+    .t-r-g-title {
+        font-size: 100%;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: underline wavy;
+        text-decoration-color: rgba(245,152,255,255) ;
+        cursor: pointer;
+        font-family: "Raleway", sans-serif; 
+    }
+
+
+    #Recent-post-section .t-r-grid-item img {
+        height: 35vh;
+        width: auto;
+        cursor: pointer;
+        font-family: "Afacad", sans-serif;
+        justify-self: center; 
+        width: 100%;
+    }
+
+    .t-r-p {
+        font-family: "Afacad", sans-serif;
+        text-align: center;
+    }
+
+    .t-r-g-button {
+        text-align: center;
+    }
+
+
+}
+
+/*RECENT POST SECTION*/
+#Recent-post-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    font-family: "Afacad", sans-serif !important;
+    margin: 5vh 5vw;
+    max-width: 90%;
+}
+
+#general-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--features-text);
+    width: 100%;
+    margin-bottom: 7vh;
+}
+
+#carousel-box{
+    display:flex;
+}
+
+
+.Carousel-Icon {
+    font-family: Var(--font);
+    cursor: pointer;
+    font-size: 5vh;
+    font-weight: 100;
+    margin: 0 2vw;
+}
+
+.Carousel-Icon:hover {
+    color: rgba(42, 47, 141, 255); 
+    transform: scale(1.3); 
+}
+
+
+[data-order="first"] {
+    display: none;
+  }
+
+[data-status='hidden'] {
+    display: none;
+}
+
+.interactions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: -2vh 0;
+}
+
+.actions-container {
+    display: flex;
+    gap: 10px; /* Distanza tra le icone */
+    align-items: center;
+}
+
+.action-icon {
+    height: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.action-icon img {
+    width: 2vw;
+    height: 4vh;
+}
+
+
+.action-icon:hover {
+    transform: scale(1.1);
+}
+
+.action-icon:active {
+    transform: scale(0.95);
+}
+
+/*Carosello*/
+
+.post-title {
+    font-size: 5vh;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.Read-More {
+    font-size: small;
+    cursor: pointer;
+    color:lightslategray;
+    font-weight: 100s;
+}
+
+
+
+/*Recent posts mobile*/
+@media (max-width: 500px) {
+
+    #general-bar {
+        display: flex;
+    }
+
+    #Recent-post-section {
+        max-width: 90vw;
+        align-items: flex-start;
+    }
+
+    #carousel-box {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        overflow-x: hidden;
+        gap: 3vh;
+    }
+
+    .post-title {
+        font-size: 3.5vh;
+    }
+
+    .Read-More {
+        font-size: 3vh;
+    }
+
+    #Recent-post-section .t-r-grid-item img {
+        height: 30vh;
+        width: auto;
+        cursor: pointer;
+        font-family: "Afacad", sans-serif;
+        justify-self: center; 
+    }
+    .action-icon img {
+        width: 5vw;  /* Aumenta leggermente la dimensione per schermi piccoli */
+        height: 5vh;
+        max-width: 30px; /* Limite massimo per evitare icone enormi */
+        max-height: 30px;
+    }
+}
+
+/*Flight section*/
+
+#flight-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+    padding: 10vh 0;
+    background-color: rgba(229,233,253,255);
+    border-top: 5px solid var(--bg-color);
+    background: linear-gradient(rgba(148, 171, 249, 0.6), rgba(88, 117, 242, 0.8)),
+    url('mappa.jpg');
+    background-size: cover;
+}
+
+
+#flight-search-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    margin-bottom: 5vh;
+    font-size: 3vh;
+}
+
+#flight-search-bar input {
+    padding: 1vh 2vw;
+    border-radius: 100px;
+    border: none;
+    font-size: 2vh;
+    font-family: var(--font);
+    width: 30vw;
+} 
+
+#flight-search-bar #submit { 
+    background-color: var(--text-color);
+    color: white;
+    padding: 1vh 2vw;
+    cursor: pointer;
+}
+
+#flight-search-bar #submit:hover {
+    background-color: rgba(42, 47, 141, 255); 
+    transform: scale(1.05);
+}
+
+
+/* Contenitore generale dei risultati */
+#flight-result {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 3vh;
+    margin-top: 5vh;
+    font-size: 2vh;
+}
+
+/* Card singolo volo */
+.flight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2vh;
+    background-color: rgba(255, 255, 255, 0.75); /* semi-trasparente */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 40vw;
+    transition: transform 0.2s ease;
+}
+
+.flight:hover {
+    transform: scale(1.02);
+}
+
+/* Singola riga di info */
+.flight-caption {
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Titolo del risultato */
+.flight-caption:first-child {
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin-bottom: 1vh;
+    color: var(--features-text);
+}
+
+
+
+
+
