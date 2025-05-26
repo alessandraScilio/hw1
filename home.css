@@ -8,139 +8,327 @@
   --title-font: "Playfair Display", serif;
 }
 
-html {
-    overflow-y: hidden;
-}
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: var(--title-font), sans-serif;
-  background-color: var(--sabbia);
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: whitesmoke;
+  color: var(--nero);
+}
+
+#nav-container {
+  width: 100%;
+  padding: 15px 40px;
+  box-sizing: border-box;
+}
+
+#nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+#site-name {
+  font-family: var(--title-font);
+  font-size: 2rem;
+  color: var(--marrone);
+  flex: 1;
+}
+
+#menu-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 30px;
+  flex: 2;
 }
 
-#signup-container {
-  background-color: #fff;
-  padding: 0 50px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  width: 90%;
-  max-width: 420px;
+.menu-item {
+  font-family: var(--title-font);
+  text-decoration: none;
+  color: var(--nero);
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: var(--marrone);
+}
+
+#account-button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.account-button {
+  padding: 10px 24px;
+  background-color: var(--marrone);
+  color: var(--sabbia);
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.account-button:hover {
+  background-color: var(--nero);
+}
+
+/*Article preview*/
+
+.articles-preview-section {
+  padding: 60px 20px;
   text-align: center;
-  box-sizing: border-box;
-  margin: 20px;
-  font-family: var(--title-font), sans-serif;
 }
 
-
-#signup-container h1 {
-  margin-bottom: 24px;
-  color: var(--nero);
-  font-size: 26px;
+.section-title {
+  font-family: var(--title-font);
+  font-size: 2.5rem;
+  color: var(--marrone);
+  margin-bottom: 40px;
 }
 
-
-label {
-  display: block;
-  text-align: left;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: var(--nero);
-  font-size: 14px;
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.article-card {
+  background-color: var(--sabbia);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-card img {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
+  height: 180px;
+  object-fit: cover;
 }
 
-input:focus {
-  border-color: var(--marrone);
-  outline: none;
-}
-
-
-#specifiche {
-  padding: 6px 16px;
-  margin-bottom: 16px;
-  font-size: 13px;
+.article-card h3 {
+  font-family: var(--title-font);
+  font-size: 1.3rem;
   color: var(--nero);
-  border-radius: 8px;
+  margin: 15px;
+}
+
+.article-card p {
+  font-size: 1rem;
+  color: var(--nero);
+  margin: 0 15px 20px;
+}
+
+.more-articles-link {
+  margin-top: 40px;
+  text-decoration: underline;
+}
+
+.arrow-link {
+  font-size: 1.1rem;
+  color: var(--marrone);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.arrow-link:hover {
+  color: var(--nero);
+}
+
+
+/*Flight offers*/
+.travel-deals-section {
+  background-color: var(--sabbia);
+  padding: 80px 20px;
+}
+
+.deal-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deal-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.deal-text {
+  flex: 1 1 450px;
+}
+
+.deal-text h2 {
+  font-family: var(--title-font);
+  font-size: 2.2rem;
+  color: var(--marrone);
+  margin-bottom: 20px;
+}
+
+.deal-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--nero);
+  margin-bottom: 30px;
+}
+
+.deal-button {
+  display: inline-block;
+  background-color: var(--marrone);
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.deal-button:hover {
+  background-color: var(--nero);
+}
+
+.deal-image {
+  flex: 1 1 450px;
+  text-align: center;
+}
+
+.deal-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Channel Section */
+.travel-channels-section {
+  background-color: var(--bianco);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.travel-channels-section h2 {
+  font-family: var(--title-font);
+  color: var(--marrone);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.channels-subtitle {
+  color: var(--nero);
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.channel-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.channel-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.channel-row img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.channel-description {
+  max-width: 500px;
   text-align: left;
+}
+
+.channel-description h3 {
+  font-family: var(--title-font);
+  font-size: 1.8rem;
+  color: var(--marrone);
+  margin-bottom: 10px;
+}
+
+.channel-description p {
+  color: var(--nero);
+  font-size: 1rem;
   line-height: 1.6;
 }
 
 
-input[type="submit"] {
-  width: 100%;
-  padding: 12px;
+
+/* Footer */
+.site-footer {
   background-color: var(--sabbia);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: var(--title-font), sans-serif;
+  color: var(--marrone);
+  font-family: var(--title-font);
+  padding: 40px 20px 20px;
 }
 
-input[type="submit"]:hover {
-  background-color: var(--sabbia-hover);
+.footer-container {
+  border-top: 1px solid var(--marrone);
+  padding-top: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid var(--marrone);
+  padding-bottom: 20px;
 }
 
-#signup-container p {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #555;
+.footer-left h3 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
 }
 
-#signup-container a {
+.footer-left p {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 300px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
   color: var(--marrone);
   text-decoration: none;
-  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.3s;
 }
 
-#signup-container a:hover {
-  text-decoration: underline;
+.footer-links a:hover {
+  opacity: 0.7;
 }
 
-#error-message {
-  color: red;
-  white-space: pre-line;
-  margin-top: 10px;
-  text-align: left;
-  font-size: 13px;
-}
-
-
-@media (max-width: 480px) {
-  #signup-container {
-    padding: 28px 20px;
-    border-radius: 12px;
-  }
-
-  #signup-container h1 {
-    font-size: 22px;
-  }
-
-  #specifiche {
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  input[type="submit"] {
-    font-size: 15px;
-  }
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
