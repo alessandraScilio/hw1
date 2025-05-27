@@ -1,8 +1,4 @@
 <?php
-    /********************************************************
-       Controlla che l'utente sia già autenticato, per non 
-       dover chiedere il login ad ogni volta               
-    *********************************************************/
     require_once 'dbconfig.php';
     session_start();
 

@@ -167,10 +167,6 @@ body {
   margin-right: auto;
 }
 
-.deal-container.reverse {
-  flex-direction: row-reverse;
-}
-
 .deal-text {
   flex: 1 1 450px;
 }
@@ -243,10 +239,6 @@ body {
   margin-bottom: 50px;
   gap: 40px;
   flex-wrap: wrap;
-}
-
-.channel-row.reverse {
-  flex-direction: row-reverse;
 }
 
 .channel-row img {

@@ -9,18 +9,17 @@
 <!DOCTYPE html>
 <html  lang="en">
   <?php 
-    // Carico le informazioni dell'utente loggato per visualizzarle nella sidebar (mobile)
     $conn = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['name']);
     $userid = mysqli_real_escape_string($conn, $userid);
     $query = "SELECT * FROM users WHERE id = $userid";
     $res_1 = mysqli_query($conn, $query);
-    $userinfo = mysqli_fetch_assoc($res_1);   
+    $userinfo = mysqli_fetch_assoc($res_1); 
+    $username = $userinfo['username'];  
   ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TravelHub - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
@@ -39,7 +38,7 @@
     </div>
 
     <div id="account-button-container">
-      <a href="account.php" class="account-button">My Account</a>
+      <a href="account.php" class="account-button"><?php echo htmlspecialchars($username); ?>'s Account</a>
     </div>
 
   </div>
@@ -97,7 +96,7 @@
   </div>
 
   <!-- Hotel Deals -->
-  <div class="deal-container reverse">
+  <div class="deal-container">
     <div class="deal-image">
       <img src="pics/hotel.avif" alt="Hotel deals">
     </div>
