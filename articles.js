@@ -66,6 +66,27 @@ function readMoreFunction(articleDiv, articleData) {
             input.value = '';
         });
     });
+
+    const showLessBtn = document.createElement('button');
+    showLessBtn.textContent = 'Read less';
+    showLessBtn.classList.add('read-more');
+    articleDiv.appendChild(showLessBtn);
+
+    showLessBtn.addEventListener('click', () => {
+        preview.textContent = articleData.content.substring(0,150);
+
+        commentsDiv.remove();
+        commentForm.remove();
+        showLessBtn.remove();
+
+        const newReadMoreBtn = document.createElement('button');
+        newReadMoreBtn.textContent = 'Read more';
+        newReadMoreBtn.classList.add('read-more');
+        articleDiv.appendChild(newReadMoreBtn);
+        newReadMoreBtn.addEventListener('click', () => {
+            readMoreFunction(articleDiv, articleData);
+        });
+    });
 }
 
 

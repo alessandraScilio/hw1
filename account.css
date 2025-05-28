@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  --sabbia: rgba(223, 208, 188, 1);
+  --sabbia-hover: rgba(193, 178, 158, 1);
+  --nero: rgba(60, 59, 58, 1);
+  --marrone: rgba(95, 74, 69, 1);
+  --title-font: "Playfair Display", serif;
+}
+
+body {
+  background-color: whitesmoke;
+  color: var(--nero);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-container {
+  width: 100%;
+  padding: 15px 40px;
+  box-sizing: border-box;
+}
+
+#nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+#site-name {
+  font-family: var(--title-font);
+  font-size: 2rem;
+  color: var(--marrone);
+  flex: 1;
+}
+
+#menu-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex: 2;
+}
+
+.menu-item {
+  font-family: var(--title-font);
+  text-decoration: none;
+  color: var(--nero);
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: var(--marrone);
+}
+
+#account-button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.account-button {
+  padding: 10px 24px;
+  background-color: var(--marrone);
+  color: var(--sabbia);
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.account-button:hover {
+  background-color: var(--nero);
+}
+
+#account-button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.account-button {
+  padding: 10px 24px;
+  background-color: var(--marrone);
+  color: var(--sabbia);
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.account-button:hover {
+  background-color: var(--nero);
+}
+
+/* Account content */
+
+.account-container {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: var(--title-font);
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 16px;
+}
+
+.account-container h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: var(--marrone);
+}
+
+.account-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--sabbia-hover);
+  font-family: Arial, sans-serif;
+}
+
+.account-section h2 {
+  font-family: var(--title-font);
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: var(--nero);
+}
+
+.account-section p {
+  margin: 6px 0;
+}
+
+.account-section .account-button {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.account-section.danger .account-button.danger {
+  background-color: #b0392f;
+}
+
+.account-section.danger .account-button.danger:hover {
+  background-color: #7a211c;
+}
+
+.liked-posts-section {
+  display: grid;
+  justify-content: flex-start;
+  padding: 60px 20px;
+  max-width: 100vw;
+  background-color: var(--sabbia);
+  font-family: var(--title-font);
+  text-align: center;
+}
+
+.liked-posts-section h2 {
+  font-size: 2rem;
+  color: var(--marrone);
+  margin-bottom: 40px;
+}
+
+.no-liked-msg {
+  font-style: italic;
+  color: var(--nero);
+  margin-top: 20px;
+}
