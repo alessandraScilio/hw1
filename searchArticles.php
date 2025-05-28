@@ -38,12 +38,13 @@ if (!empty($conditions)) {
 $query = "SELECT 
             a.*, 
             COUNT(l.id) AS like_count,
-            (SELECT COUNT(*) FROM likes WHERE user_id = $userid AND article_id = a.id) AS liked
-            FROM articles a
-            LEFT JOIN likes l ON a.id = l.article_id
-            $whereClause
-            GROUP BY a.id
-            ORDER BY a.created_at DESC";
+            (SELECT COUNT(*) FROM likes WHERE user_id = $userid AND article_id = a.id) AS liked,
+            (SELECT COUNT(*) FROM comments WHERE article_id = a.id) AS comment_count
+          FROM articles a
+          LEFT JOIN likes l ON a.id = l.article_id
+          $whereClause
+          GROUP BY a.id
+          ORDER BY a.created_at DESC";;
 
 $res = mysqli_query($conn, $query);
 

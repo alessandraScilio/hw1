@@ -67,21 +67,5 @@
 </section>
 
   <div id="articles-container"></div>
- <div id="article-modal" class="hidden">
-  <div class="modal-content">
-    <span class="close-button">&times;</span>
-    <img id="modal-image" src="" alt="">
-    <h3 id="modal-title"></h3>
-    <p id="modal-content"></p>
-    <div class="modal-meta">
-      <img src="pics/like.svg" alt="Like">
-      <span id="modal-likes"></span>
-      <img src="pics/comment.svg" alt="Comments">
-      <span id="modal-comments"></span>
-      <img src="pics/share.svg" alt="Share">
-    </div>
-  </div>
-</div>
-
   </body>
 </html>
