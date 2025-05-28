@@ -1,4 +1,3 @@
-
 function readMoreFunction(articleDiv, articleData) {
     // Rimpiazza il preview con il testo completo
     const preview = articleDiv.querySelector('p');
@@ -42,8 +41,14 @@ function readMoreFunction(articleDiv, articleData) {
     articleDiv.appendChild(commentForm);
 
     submitBtn.addEventListener('click', function(e) {
+        
         e.preventDefault();
-        const comment = input.value;
+        const comment = input.value.trim();
+       
+        if (comment === '') {
+            alert('Please enter a comment before submitting.');
+            return;
+        } 
 
         fetch('addComment.php', {
             method: 'POST',
@@ -57,7 +62,6 @@ function readMoreFunction(articleDiv, articleData) {
         .then(newComment => {
             const commentP = document.createElement('p');
             commentP.textContent = newComment.content;
-            commentP.classList('comment');
             commentsDiv.appendChild(commentP);
             input.value = '';
         });

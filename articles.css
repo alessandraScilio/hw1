@@ -237,6 +237,7 @@ body {
     margin-top: 10px;
     display: flex;
     gap: 10px;
+    background-color: whitesmoke;
 }
 .comment-form input {
     flex: 1;
@@ -245,17 +246,12 @@ body {
     border: 1px solid var(--marrone);
 }
 
-.comment-form[type=submit] {
-    padding: 6px 12px;
-    border-radius: 50px;
-    background-color: var(--marrone);
-    color: whitesmoke;
-    border: none;
-    cursor: pointer;
-}
-
 .comment-form button:hover {
     background-color: var(--nero);
+}
+
+.comment-form-submit {
+  background-color: var(--marrone);
 }
 
 .comment {
