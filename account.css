@@ -164,6 +164,10 @@ body {
   margin-bottom: 40px;
 }
 
+.liked-post-title {
+  color: var(--nero);
+}
+
 .no-liked-msg {
   font-style: italic;
   color: var(--nero);

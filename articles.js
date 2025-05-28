@@ -1,17 +1,15 @@
 function readMoreFunction(articleDiv, articleData) {
-    // Rimpiazza il preview con il testo completo
+
     const preview = articleDiv.querySelector('p');
     preview.textContent = articleData.content;
 
     const readMoreBtn = articleDiv.querySelector('.read-more');
     if (readMoreBtn) readMoreBtn.remove();
 
-    // Container per i commenti
     const commentsDiv = document.createElement('div');
     commentsDiv.classList.add('comments-container');
     articleDiv.appendChild(commentsDiv);
 
-    // Carica ultimi 3 commenti
     fetch(`getComments.php?article_id=${articleData.id}`)
         .then(response => response.json())
         .then(comments => {
@@ -23,7 +21,6 @@ function readMoreFunction(articleDiv, articleData) {
             });
         });
 
-    // Form per aggiungere un commento
     const commentForm = document.createElement('form');
     commentForm.classList.add('comment-form');
 
@@ -41,10 +38,8 @@ function readMoreFunction(articleDiv, articleData) {
     articleDiv.appendChild(commentForm);
 
     submitBtn.addEventListener('click', function(e) {
-        
         e.preventDefault();
         const comment = input.value.trim();
-       
         if (comment === '') {
             alert('Please enter a comment before submitting.');
             return;
@@ -64,6 +59,11 @@ function readMoreFunction(articleDiv, articleData) {
             commentP.textContent = newComment.content;
             commentsDiv.appendChild(commentP);
             input.value = '';
+
+            const commentCountElement = articleDiv.querySelector('.comment-count');
+            if (commentCountElement) {
+            commentCountElement.textContent = parseInt(commentCountElement.textContent) + 1;
+            }
         });
     });
 
@@ -200,6 +200,7 @@ function onJSON(json) {
         const commentImg = document.createElement('img');
         commentImg.src = 'pics/comment.svg';
         const commentCount = document.createElement('p');
+        commentCount.classList.add('comment-count');
         commentCount.textContent = article.comment_count;
         commentImg.addEventListener('click', () => readMore(article));
 
