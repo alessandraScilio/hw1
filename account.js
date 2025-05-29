@@ -1,36 +1,45 @@
-// Post con like
+async function loadLikedPosts() {
+    try {
+        const response = await fetch('getPosts.php');
+        const posts = await response.json();
+        
+        if (posts.error) {
+            throw new Error(posts.error);
+        }
+        
+        posts.forEach(post => {
+            console.log('Post ID:', post.id);
+            console.log('Title:', post.title);
+            console.log('Image URL:', post.image_url);
+            
 
-function onJSON(json) {
-    const container = document.getElementById('liked-posts-container');
-    container.innerHTML = ''; 
+            const container = document.getElementById('liked-posts-container');
+            if (container) {
+            
+                const postElement = document.createElement('div');
+                postElement.className = 'liked-post';
 
-    if (json.length === 0) {
-        const msg = document.createElement('p');
-        msg.textContent = 'No liked posts yet.';
-        msg.classList.add('no-liked-msg'); 
-        container.appendChild(msg);
-        return;
-    }
+                const postImg = document.createElement('img');
+                postImg.src = post.image_url || 'default.jpg'; 
+                postElement.appendChild(postImg);
 
-    for (const post of json) {
-        const postDiv = document.createElement('div');
-        postDiv.classList.add('liked-post');
+                const postTitle = document.createElement('h3');
+                postTitle.textContent = post.title;
+                postTitle.className = 'liked-post-title';
+                postElement.appendChild(postTitle);
 
-        const title = document.createElement('h3');
-        title.classList.add('liked-post-title');
-        title.textContent = post.title;
-
-        postDiv.appendChild(title);
-        container.appendChild(postDiv);
+                container.appendChild(postElement);
+                // Aggiungere reindirizzamento per articoli
+            }
+        });
+        
+    } catch (error) {
+        console.error('Error loading liked posts:', error);
+        const container = document.getElementById('liked-posts-container');
+        if (container) {
+            container.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+        }
     }
 }
 
-function onResponse(response){
- if (response.ok) {
-        return response.json();
-    } else {
-        throw new Error('Network response was not ok');
-    }
-}
-
-fetch('accountInfo.php?').then(onResponse).then(onJSON);
+document.addEventListener('DOMContentLoaded', loadLikedPosts);

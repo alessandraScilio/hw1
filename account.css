@@ -100,7 +100,6 @@ body {
   background-color: var(--nero);
 }
 
-/* Account content */
 
 .account-container {
   padding: 60px 20px;
@@ -158,10 +157,11 @@ body {
   text-align: center;
 }
 
-.liked-posts-section h2 {
+ .liked-posts-section h2{
   font-size: 2rem;
   color: var(--marrone);
   margin-bottom: 40px;
+  text-decoration: underline;
 }
 
 .liked-post-title {
@@ -172,4 +172,31 @@ body {
   font-style: italic;
   color: var(--nero);
   margin-top: 20px;
+}
+
+#liked-posts-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.liked-post {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 300px;
+}
+
+.liked-post img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.error {
+    color: #d32f2f;
+    font-weight: bold;
 }

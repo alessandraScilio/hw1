@@ -38,9 +38,7 @@ CREATE TABLE IF NOT EXISTS comments (
   FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE
 );
 
-
-
-
+SELECT COUNT(*) FROM likes WHERE user_id = [3];
 
  
  

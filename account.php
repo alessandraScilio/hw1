@@ -22,17 +22,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My account</title>
-  <link rel="stylesheet" href="account.css" />
+  <link rel="stylesheet" href="account.css"/>
+  <script src="account.js" defer></script> 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <header id="nav-container">
     <div id="nav-content">
       <div id="site-name">TravelHub</div>
       <nav id="menu-container">
-        <a href="#" class="menu-item">Articles</a>
+        <a href="articles.php" class="menu-item">Articles</a>
         <a href="#" class="menu-item">Offers</a>
         <a href="#" class="menu-item">Contacts</a>
       </nav>
@@ -59,8 +59,8 @@
     </div>
 
     <section class="liked-posts-section">
-        <h2>Favourite posts</h2>
-        <div class="liked-posts-container"></div>
+        <h2>Your favourite posts</h2>
+        <div id="liked-posts-container"></div>
     </section>
 
 </body>
