@@ -33,7 +33,7 @@
       <div id="site-name">TravelHub</div>
       <nav id="menu-container">
         <a href="articles.php" class="menu-item">Articles</a>
-        <a href="#" class="menu-item">Offers</a>
+        <a href="articles.php" class="menu-item">Flights</a>
         <a href="#" class="menu-item">Contacts</a>
       </nav>
       <div id="account-button-container">

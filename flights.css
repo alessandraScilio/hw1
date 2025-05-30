@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  --sabbia: rgba(223, 208, 188, 1);
+  --sabbia-hover: rgba(193, 178, 158, 1);
+  --nero: rgba(60, 59, 58, 1);
+  --marrone: rgba(95, 74, 69, 1);
+  --title-font: "Playfair Display", serif;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: whitesmoke;
+  color: var(--nero);
+}
+
+/*Navbar*/
+#nav-container {
+  width: 100%;
+  padding: 15px 40px;
+  box-sizing: border-box;
+}
+
+#nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+#site-name {
+  font-family: var(--title-font);
+  font-size: 2rem;
+  color: var(--marrone);
+  flex: 1;
+}
+
+#menu-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex: 2;
+}
+
+.menu-item {
+  font-family: var(--title-font);
+  text-decoration: none;
+  color: var(--nero);
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: var(--marrone);
+}
+
+#account-button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.account-button {
+  padding: 10px 24px;
+  background-color: var(--marrone);
+  color: var(--sabbia);
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.account-button:hover {
+  background-color: var(--nero);
+}
+
+/* Flight Section */
+#flight-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+#flight-section .title {
+  font-family: var(--title-font);
+  font-size: 2rem;
+  color: var(--marrone);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#flight-search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: var(--sabbia);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+#flight-search-form input[type="text"],
+#flight-search-form input[type="date"] {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#flight-search-form input[type="text"]:focus,
+#flight-search-form input[type="date"]:focus {
+  border-color: var(--marrone);
+}
+
+#flight-search-form input[type="submit"] {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: var(--marrone);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#flight-search-form input[type="submit"]:hover {
+  background-color: var(--nero);
+}
+
+
+#flight-result {
+  font-family: var(--title-font);
+  color: var(--nero);
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+  display: block;
+}
+
+.flight {
+  background-color: white;
+  border: none;
+  padding: 12px 15px;
+  width: 100%; 
+  box-sizing: border-box; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--marrone);
+}
+
+.flight:last-child {
+  border-bottom: none;
+}
+
+.flight:hover {
+  background-color: var(--sabbia-hover);
+}
+
+.flight-caption {
+  margin: 5px 0;
+  font-weight: 600;
+  color: var(--nero);
+  font-size: 1rem;
+}
+
+#flight-result .error-message {
+  color: #b00020; 
+  background-color: #fdecea;
+  border: 1px solid #f5c6cb;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  font-family: var(--title-font);
+}

@@ -89,8 +89,6 @@ function readMoreFunction(articleDiv, articleData) {
     });
 }
 
-
-// Articles research and like functionality
 function onLikeResponse(response) {
     if (response.ok) {
         return response.json();

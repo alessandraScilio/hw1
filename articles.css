@@ -82,7 +82,7 @@ body {
 
 /*Search section*/
 .search-section {
-  background-color: var(--sabbia);
+  background-color: whitesmoke;
   padding: 60px 20px;
   text-align: center;
   font-family: var(--title-font);

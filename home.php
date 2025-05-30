@@ -31,8 +31,8 @@
     <div id="site-name">TravelHub</div>
 
     <div id="menu-container">
-      <a class="menu-item" href="#">Articles</a>
-      <a class="menu-item" href="#">Flights</a>
+      <a class="menu-item" href="articles.php">Articles</a>
+      <a class="menu-item" href="flights.php">Flights</a>
       <a class="menu-item" href="#">Hotels</a>
       <a class="menu-item" href="#">Channels</a>
     </div>

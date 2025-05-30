@@ -13,10 +13,10 @@
           <div id="site-name">TravelHub</div>
 
         <div id="menu-container">
-        <a class="menu-item" href="#">Home</a>
-        <a class="menu-item" href="#">Destinations</a>
-        <a class="menu-item" href="#">Forum</a>
-        <a class="menu-item" href="#">Contacts</a>
+           <a class="menu-item" href="articles.php">Articles</a>
+           <a class="menu-item" href="flights.php">Flights</a>
+           <a class="menu-item" href="#">Hotels</a>
+           <a class="menu-item" href="#">Channels</a>
         </div>
 
         <div id="auth-buttons">
