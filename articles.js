@@ -178,13 +178,12 @@ function onJSON(json) {
 
         const likeImg = document.createElement('img');
         likeImg.dataset.id = article.id;
-        
+
         if (article.liked == 0) {
             likeImg.src = 'pics/like.svg';
         } else {
             likeImg.src = 'pics/liked.svg';
         }
-
 
         const likeCount = document.createElement('p');
         likeCount.textContent = article.like_count;
@@ -194,13 +193,15 @@ function onJSON(json) {
         actionDiv.appendChild(likeImg);
 
         actionDiv.appendChild(likeCount);
-    
+
         const commentImg = document.createElement('img');
         commentImg.src = 'pics/comment.svg';
         const commentCount = document.createElement('p');
         commentCount.classList.add('comment-count');
         commentCount.textContent = article.comment_count;
-        commentImg.addEventListener('click', () => readMore(article));
+        commentImg.addEventListener('click', function() {
+            readMore(article);
+        });
 
         actionDiv.appendChild(commentImg);
         actionDiv.appendChild(commentCount);
@@ -214,13 +215,16 @@ function onJSON(json) {
         const readMore = document.createElement('a');
         readMore.textContent = 'Read more';
         readMore.classList.add('read-more');
-        readMore.addEventListener('click', () => readMoreFunction(articleDiv, article));
+        readMore.addEventListener('click', function() {
+            readMoreFunction(articleDiv, article);
+        });
         articleDiv.appendChild(readMore);
 
-        articleDiv.dataset.id = article.id; // Article: data-id attribute
+        articleDiv.dataset.id = article.id;
         container.appendChild(articleDiv);
     }
 }
+
 
 function onResponse(response) {
     return response.json();

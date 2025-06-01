@@ -10,8 +10,8 @@
       <body>
       <nav id="nav-container">
         <div id="nav-content">
-          <div id="site-name">TravelHub</div>
-
+        <a href="home.php" id="site-name">TravelHub</a>
+  
         <div id="menu-container">
            <a class="menu-item" href="articles.php">Articles</a>
            <a class="menu-item" href="flights.php">Flights</a>
@@ -39,8 +39,6 @@
   </div>
 </header>
 
-
-<!--Services-->
 <section class="services-section">
   <div class="services-container">
     <h2>Our Services</h2>
@@ -68,7 +66,6 @@
 </section>
 
 
-<!-- Articles -->
   <section class="travel-articles-intro">
        <div class="intro-container">
         <div class="intro-text">
@@ -80,7 +77,6 @@
       </div>
   </section>
 
-<!--Features-->
    <span id = "features-container">
             <div id="features-text">TRAVEL HUB HAS BEEN FEATURED IN...</div>
           <div id="logos-container">

@@ -29,12 +29,13 @@
     <nav id="nav-container">
     <div id="nav-content">
     
-    <div id="site-name">TravelHub</div>
-    <div id="menu-container">
+<a href="home.php" id="site-name">TravelHub</a>
+
+   <div id="menu-container">
+      <a class="menu-item" href="home.php">Home</a>
       <a class="menu-item" href="articles.php">Articles</a>
       <a class="menu-item" href="flights.php">Flights</a>
       <a class="menu-item" href="#">Hotels</a>
-      <a class="menu-item" href="#">Channels</a>
     </div>
 
     <div id="account-button-container">
@@ -44,7 +45,6 @@
   </div>
 </nav>
 
-<!--Search-->
 <section class="search-section">
   <h2>Find Travel Articles</h2>
   <form id="search-form" method='POST'>

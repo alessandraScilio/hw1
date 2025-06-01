@@ -37,6 +37,7 @@ body {
   font-size: 2rem;
   color: var(--marrone);
   flex: 1;
+  text-decoration: none;
 }
 
 #menu-container {
@@ -78,7 +79,6 @@ body {
   background-color: var(--nero);
 }
 
-/*Article preview*/
 
 .articles-preview-section {
   padding: 60px 20px;
@@ -90,9 +90,10 @@ body {
   font-size: 2.5rem;
   color: var(--marrone);
   margin-bottom: 20px;
+  margin-top: -10px;
 }
 
-.articles-grid {
+#articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
@@ -149,7 +150,6 @@ body {
 }
 
 
-/*Flight offers*/
 .travel-deals-section {
   background-color: var(--sabbia);
   padding: 80px 20px;
@@ -212,7 +212,6 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Channel Section */
 .travel-channels-section {
   background-color: var(--bianco);
   padding: 80px 20px;
@@ -266,9 +265,6 @@ body {
   line-height: 1.6;
 }
 
-
-
-/* Footer */
 .site-footer {
   background-color: var(--sabbia);
   color: var(--marrone);

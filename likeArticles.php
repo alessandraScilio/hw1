@@ -9,7 +9,6 @@ $conn = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password
 $data = json_decode(file_get_contents("php://input"), true);
 $article_id = mysqli_real_escape_string($conn, $data['article_id']);
 
-// Check se like già esiste
 $checkQuery = "SELECT * FROM likes WHERE user_id = $userid AND article_id = $article_id";
 $checkRes = mysqli_query($conn, $checkQuery);
 
@@ -18,7 +17,6 @@ if (mysqli_num_rows($checkRes) == 0) {
     mysqli_query($conn, $insertQuery);
 }
 
-// Ritorna nuovo numero di like
 $countQuery = "SELECT COUNT(*) AS like_count FROM likes WHERE article_id = $article_id";
 $res = mysqli_query($conn, $countQuery);
 $row = mysqli_fetch_assoc($res);

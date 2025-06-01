@@ -16,7 +16,6 @@ body {
   color: var(--nero);
 }
 
-/*Navbar*/
 #nav-container {
   width: 100%;
   padding: 15px 40px;
@@ -38,6 +37,7 @@ body {
   font-size: 2rem;
   color: var(--marrone);
   flex: 1;
+  text-decoration: none;
 }
 
 #menu-container {
@@ -80,7 +80,6 @@ body {
 }
 
 
-/*Search section*/
 .search-section {
   background-color: whitesmoke;
   padding: 60px 20px;
@@ -142,7 +141,6 @@ body {
   background-color: var(--nero);
 }
 
-/*stile articoli*/
 
 #articles-container {
   display: grid;

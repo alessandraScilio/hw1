@@ -29,6 +29,7 @@
   font-size: 2rem;
   font-weight: bold;
   color: var(--marrone);
+  text-decoration: none;
 }
 
 #menu-container {
@@ -78,7 +79,6 @@
   color: var(--bianco);
 }
 
-/*MOBILE NAV-BAR*/
 @media (max-width: 500px) {
 
     #nav-content{
@@ -96,8 +96,6 @@
     }
 
 }
-
-/*HEADER SECTION*/
 
 * {
   margin: 0;
@@ -173,7 +171,6 @@ body, html {
 }
 
 
-/*Sezione HEADER MOBILE*/
  
    @media (max-width: 768px) {
   #header-container {
@@ -231,8 +228,6 @@ body, html {
 }
 
 
-/*Features bar*/
-
 #features-container {
     display: flex;
     align-items: center;
@@ -266,7 +261,6 @@ body, html {
     width: auto;
 }
 
-/*Features bar MOBILE*/
 @media (max-width: 500px) {
 
     #features-container {
@@ -307,7 +301,6 @@ body, html {
     }
 }
 
-/*Article*/
 .travel-articles-intro {
     background-color: whitesmoke;
     background: linear-gradient(to right, whitesmoke 0%, rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%), 
@@ -357,7 +350,6 @@ body, html {
     background-color: var(--nero);
 }
 
-/*Services*/
 .services-section {
   background-color: var(--sabbia);
   color: var(--nero);
@@ -412,7 +404,6 @@ body, html {
   opacity: 0.9;
 }
 
-/*Footer*/
 .site-footer {
   background-color: var(--sabbia);
   color: var(--marrone);

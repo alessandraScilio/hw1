@@ -1,7 +1,6 @@
 function handleError(error) {
     const output = document.getElementById('flight-result');
     output.textContent = "Errore";
-    // output.innerHTML = '<p style="color: red;">Errore di rete: ' + error.message + '</p>';
     console.error('Errore fetch:', error);
 }
 
@@ -63,9 +62,6 @@ function handleResult(flights) {
         flightResult.appendChild(flightDiv);
     }
 }
-
-// Creare codice css
-
 
 function handleResponse(response) {
     if (!response.ok) {

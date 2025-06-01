@@ -16,7 +16,6 @@ if (
     $error = array();
     $conn = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['name']) or die(mysqli_error($conn));
 
-    // USERNAME
     if (!preg_match('/^[a-zA-Z0-9_]{1,15}$/', $_POST['username'])) {
         $error[] = "Username non valido";
     } else {
@@ -26,18 +25,14 @@ if (
             $error[] = "Username già utilizzato";
         }
     }
-
-    // PASSWORD
     if (strlen($_POST["password"]) < 8) {
         $error[] = "Caratteri password insufficienti";
     }
 
-    // CONFERMA PASSWORD
     if ($_POST["password"] !== $_POST["confirm-password"]) {
         $error[] = "Le password non coincidono";
     }
 
-    // EMAIL
     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $error[] = "Email non valida";
     } else {
@@ -50,7 +45,6 @@ if (
 
     $_SESSION['errors'] = $error;
 
-    // REGISTRAZIONE
     if (count($error) == 0) {
         $password = mysqli_real_escape_string($conn, $_POST['password']);
         $password = password_hash($password, PASSWORD_BCRYPT);

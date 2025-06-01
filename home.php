@@ -21,14 +21,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TravelHub - Home</title>
   <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script> 
 </head>
 <body>
 
-  <!--Navbar-->
 <nav id="nav-container">
   <div id="nav-content">
     
-    <div id="site-name">TravelHub</div>
+    <a href="home.php" id="site-name">TravelHub</a>
 
     <div id="menu-container">
       <a class="menu-item" href="articles.php">Articles</a>
@@ -44,36 +44,11 @@
   </div>
 </nav>
 
-  <!--Article preview-->
 
   <section class="articles-preview-section">
-  <h2 class="section-title">Travel Articles</h2>
+  <h2 class="section-title">Most liked articles</h2>
 
-  <div class="articles-grid">
-    <div class="article-card">
-      <img src="pics/tuscany.jpeg" alt="Article 1">
-      <h3>A Journey Through Tuscany</h3>
-      <p>Discover the hills, vineyards and villages of one of Italy’s most romantic regions.</p>
-    </div>
-
-    <div class="article-card">
-      <img src="pics/morocco.jpg" alt="Article 2">
-      <h3>Hidden Gems of Morocco</h3>
-      <p>Step off the beaten path and explore vibrant souks and tranquil deserts.</p>
-    </div>
-
-    <div class="article-card">
-      <img src="pics/kyoto.jpg" alt="Article 3">
-      <h3>Exploring Kyoto's Traditions</h3>
-      <p>Temples, tea ceremonies and timeless beauty in Japan’s cultural heart.</p>
-    </div>
-
-    <div class="article-card">
-      <img src="pics/auroraBoreale.avif" alt="Article 4">
-      <h3>Chasing the Northern Lights</h3>
-      <p>Witness the aurora borealis in the silent wilderness of Scandinavia.</p>
-    </div>
-  </div>
+  <div id="articles-grid"></div>
 
   <div class="more-articles-link">
     <a href="articles.php" class="arrow-link">View All Articles →</a>
@@ -82,7 +57,6 @@
 
 <section class="travel-deals-section">
 
-  <!-- Flight Deals -->
   <div class="deal-container">
     <div class="deal-text">
       <h2>Find the Best Flight Deals</h2>
@@ -95,7 +69,6 @@
     </div>
   </div>
 
-  <!-- Hotel Deals -->
   <div class="deal-container">
     <div class="deal-image">
       <img src="pics/hotel.avif" alt="Hotel deals">
@@ -110,7 +83,6 @@
 
 </section>
 
-<!-- Travel Channels Section -->
 <section class="travel-channels-section">
   <h2>Explore Our Travel Channels</h2>
   <p class="channels-subtitle">Follow our adventures across multiple platforms</p>
@@ -127,7 +99,6 @@
 </section>
 
 
-<!-- Footer -->
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-left">

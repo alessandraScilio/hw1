@@ -1,7 +1,4 @@
 <?php 
-    /*******************************************************
-        Controlla che l'username sia unico
-    ********************************************************/
     require_once 'dbconfig.php';
 
     if (!isset($_GET["q"])) {
