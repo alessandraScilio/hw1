@@ -164,7 +164,7 @@ body {
 }
 
 .flight:hover {
-  background-color: var(--sabbia-hover);
+  background-color: var(--sabbia);
 }
 
 .flight-caption {
@@ -185,3 +185,36 @@ body {
   text-align: center;
   font-family: var(--title-font);
 }
+
+.flight-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flight-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.book-button {
+  padding: 10px 24px;
+  background-color: var(--sabbia);
+  color: var(--nero);
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.book-button:hover {
+  background-color: var(--sabbia-hover);
+}
+

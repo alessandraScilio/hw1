@@ -32,12 +32,13 @@
     <div id="nav-content">
       <div id="site-name">TravelHub</div>
       <nav id="menu-container">
+        <a class="menu-item" href="home.php">Home</a>
         <a href="articles.php" class="menu-item">Articles</a>
-        <a href="articles.php" class="menu-item">Flights</a>
+        <a href="flights.php" class="menu-item">Flights</a>
         <a href="#" class="menu-item">Contacts</a>
       </nav>
       <div id="account-button-container">
-        <a href="#" class="account-button">Logout</a>
+        <a href="logout.php" class="account-button">Logout</a>
       </div>
     </div>
   </header>
@@ -52,9 +53,9 @@
 
     <div class="account-section">
       <h2>Settings</h2>
-        <button class="account-button">Change username</button>
-        <button class="account-button">Change password</button>
-        <button class="account-button">Delete account</button>
+        <button class="account-button" type='change-username' >Change username</button>
+        <button class="account-button" type='change-password' >Change password</button>
+        <button class="account-button" type='delete-account'  >Delete account</button>
     </div>
     </div>
 

@@ -1,3 +1,11 @@
+function bookFlight(event) {
+
+    
+
+
+}
+
+
 function handleError(error) {
     const output = document.getElementById('flight-result');
     output.textContent = "Errore";
@@ -11,17 +19,17 @@ function handleResult(flights) {
     flightResult.innerHTML = '';
 
     if (flights.error) {
-        flightResult.textContent = '<p style="color: red;">Errore: ' + flights.error + '</p>';
+        flightResult.innerHTML = '<p class="error-message">Errore: ' + flights.error + '</p>';
         return;
     }
 
     for (let i = 0; i < flights.length; i++) {
         const flightDiv = document.createElement('div');
         flightDiv.classList.add('flight');
-        const flight = flights[i];
 
+        const flight = flights[i];
         const segment = flight.itineraries[0].segments[0];
-        
+
         const departure = segment.departure.iataCode;
         const departureTime = segment.departure.at;
         const dTime = departureTime.substring(11, 16);
@@ -38,27 +46,41 @@ function handleResult(flights) {
 
         const index = i + 1;
 
+        const flightContent = document.createElement('div');
+        flightContent.classList.add('flight-content');
+
+        const infoDiv = document.createElement('div');
+        infoDiv.classList.add('flight-info');
+
         const captionResult = document.createElement('div');
         captionResult.classList.add('flight-caption');
         captionResult.textContent = "Result: " + index;
-        flightDiv.appendChild(captionResult);
+        infoDiv.appendChild(captionResult);
 
         const captionFrom = document.createElement('div');
         captionFrom.classList.add('flight-caption');
         captionFrom.textContent = "From: " + departure + " at: " + dTime + 
                                   " → To: " + arrival + " at: " + aTime;
-        flightDiv.appendChild(captionFrom);
+        infoDiv.appendChild(captionFrom);
 
         const captionPrice = document.createElement('div');
         captionPrice.classList.add('flight-caption');
         captionPrice.textContent = "Price: " + price + " €";
-        flightDiv.appendChild(captionPrice);
+        infoDiv.appendChild(captionPrice);
 
         const captionFlight = document.createElement('div');
         captionFlight.classList.add('flight-caption');
         captionFlight.textContent = "Flight: " + flightNumber + " — Stopovers: " + stopoverText;
-        flightDiv.appendChild(captionFlight);
+        infoDiv.appendChild(captionFlight);
 
+        const bookBtn = document.createElement('button');
+        bookBtn.classList.add('book-button');
+        bookBtn.textContent = "Book now";
+        bookBtn.addEventListener('click', bookFlight);
+
+        flightContent.appendChild(infoDiv);
+        flightContent.appendChild(bookBtn);
+        flightDiv.appendChild(flightContent);
         flightResult.appendChild(flightDiv);
     }
 }
