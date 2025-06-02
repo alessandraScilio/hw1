@@ -38,5 +38,11 @@ CREATE TABLE IF NOT EXISTS comments (
 );
 
 
- 
+ CREATE TABLE if NOT EXISTS bookings (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  flight_id VARCHAR(255) NOT NULL,
+  user_id INT NOT NULL,
+  price FLOAT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+ )
  

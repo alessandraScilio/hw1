@@ -200,3 +200,53 @@ body {
     color: #d32f2f;
     font-weight: bold;
 }
+
+.bookings-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#bookings-container {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 10px auto;
+  box-shadow: 0 4px 8px rgba(60, 59, 58, 0.2);
+  font-family: Arial, sans-serif;
+  color: var(--nero);
+  margin-bottom: 20px;
+}
+
+.bookings-section h2 {
+  font-size: 2rem;
+  color: var(--marrone);
+  padding-top: 20px;
+  margin-bottom: 40px;
+  text-decoration: underline;
+}
+
+.booked-flight {
+  background-color: var(--sabbia);
+  color: whitesmoke;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: default;
+  transition: background-color 0.3s ease;
+}
+
+.booked-flight:hover {
+  background-color: var(--sabbia-hover);
+  color: var(--marrone);
+}
+
+.total-price {
+  margin-top: 25px;
+  font-family: var(--title-font);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--marrone);
+  text-align: right;
+}

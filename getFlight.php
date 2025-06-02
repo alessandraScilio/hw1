@@ -7,8 +7,8 @@ if (!checkAuth()) exit;
 
 header('Content-Type: application/json');
 
-$client_id = "Sa01Z7PRFE78jp3Trfam7VSbHZvuURG1";
-$client_secret = "sGApEInQGlZKTlLQ";
+$client_id = "";
+$client_secret = "";
 
 $accessToken = get_amadeus_token($client_id, $client_secret);
 if (!$accessToken) {

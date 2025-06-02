@@ -16,11 +16,7 @@ if (!$conn) {
 }
 
 $userid = (int)$userid;
-$query = "SELECT articles.id, articles.title, articles.image_url 
-          FROM articles
-          JOIN likes ON articles.id = likes.article_id
-          WHERE likes.user_id = $userid
-          ORDER BY articles.created_at DESC";
+$query = "SELECT * FROM bookings WHERE bookings.user_id = $userid";
 
 $res = mysqli_query($conn, $query);
 if (!$res) {
@@ -29,16 +25,15 @@ if (!$res) {
     exit;
 }
 
-$postArray = array();
+$bookingsArray = array();
 
 while($entry = mysqli_fetch_assoc($res)) {
-    $postArray[] = array(
-        'id' => $entry['id'],
-        'title' => $entry['title'],
-        'image_url' => $entry['image_url']
+    $bookingsArray[] = array(
+        'flight_id' => $entry['flight_id'],
+        'price' => $entry['price']
     );
 }
 
-echo json_encode($postArray);
+echo json_encode($bookingsArray);
 mysqli_close($conn);
 ?>

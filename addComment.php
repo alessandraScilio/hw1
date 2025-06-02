@@ -15,4 +15,5 @@ if (mysqli_query($conn, $query)) {
 } else {
     http_response_code(500);
 }
+    mysqli_close($conn);
 ?>

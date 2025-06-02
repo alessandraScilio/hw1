@@ -1,8 +1,27 @@
-function bookFlight(event) {
+function bookFlight(event, flightNumber, price) {
+    const bookedBtn = event.currentTarget;
+    bookedBtn.textContent = 'Booked';
+    bookedBtn.disabled = true;
 
-    
+    const data = { 
+        flight_id: flightNumber, 
+        flight_price: price
+    };
 
-
+    fetch('book_flight.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(result => {
+        console.log('Flight booked successfully:', result);
+    })
+    .catch(error => {
+        console.error('Errore durante la prenotazione:', error);
+        bookedBtn.textContent = 'Errore';
+        bookedBtn.disabled = false;
+    });
 }
 
 
@@ -70,13 +89,15 @@ function handleResult(flights) {
 
         const captionFlight = document.createElement('div');
         captionFlight.classList.add('flight-caption');
-        captionFlight.textContent = "Flight: " + flightNumber + " — Stopovers: " + stopoverText;
+        captionFlight.textContent = "Flight: " + flightNumber;
         infoDiv.appendChild(captionFlight);
 
         const bookBtn = document.createElement('button');
         bookBtn.classList.add('book-button');
         bookBtn.textContent = "Book now";
-        bookBtn.addEventListener('click', bookFlight);
+        bookBtn.addEventListener('click', (event) => {
+        bookFlight(event, flightNumber, price);
+        });
 
         flightContent.appendChild(infoDiv);
         flightContent.appendChild(bookBtn);
@@ -105,7 +126,6 @@ function handleFlightSearch(event) {
     .then(handleResult)
     .catch(handleError);
 }
-
 
 const submitBtn = document.getElementById('submit');
 submitBtn.addEventListener('click', handleFlightSearch);

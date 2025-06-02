@@ -218,3 +218,16 @@ body {
   background-color: var(--sabbia-hover);
 }
 
+#date-error {
+color: red; 
+display: none; 
+font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}

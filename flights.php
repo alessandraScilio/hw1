@@ -58,6 +58,7 @@
             
     Date:
     <input type="date" id="date-input" name="date" placeholder="Flight date (YYYY-MM-DD)">
+    <span id="date-error"></span>
     
     <input type='submit' id="submit" value='Get Flights'>
     </form>

@@ -64,6 +64,12 @@
         <div id="liked-posts-container"></div>
     </section>
 
+    <section class="bookings-section">
+        <h2>Your flight offers</h2>
+        <div id="bookings-container"></div>
+    </section>
+
+
 </body>
 </html>
 

@@ -23,4 +23,5 @@ $row = mysqli_fetch_assoc($res);
 
 header('Content-Type: application/json');
 echo json_encode(['like_count' => $row['like_count']]);
+mysqli_close($conn);
 ?>
