@@ -94,10 +94,26 @@ function handleResult(flights) {
 
         const bookBtn = document.createElement('button');
         bookBtn.classList.add('book-button');
-        bookBtn.textContent = "Book now";
-        bookBtn.addEventListener('click', (event) => {
-        bookFlight(event, flightNumber, price);
-        });
+
+        const data = { flight_id: flightNumber };
+
+        fetch('check_flight.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then(response => response.json())
+          .then(result => {
+            if (result.success) {
+                bookBtn.textContent = "Book now";
+                bookBtn.addEventListener('click', (event) => {
+                bookFlight(event, flightNumber, price);
+            });
+            } else {
+                bookBtn.textContent = "Booked";
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            });
 
         flightContent.appendChild(infoDiv);
         flightContent.appendChild(bookBtn);

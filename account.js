@@ -36,6 +36,13 @@ function onBookingsJson(bookings) {
     totalDiv.classList.add('total-price');
     totalDiv.textContent = `Total price: ${totalPrice.toFixed(2)} €`;
     bookingsContainer.appendChild(totalDiv);
+
+    const payBtn = document.createElement('button');
+    payBtn.classList.add('account-button');
+    payBtn.textContent = 'Pay now';
+    bookingsContainer.appendChild(payBtn);
+
+
 }
 
 function onError(error) {
