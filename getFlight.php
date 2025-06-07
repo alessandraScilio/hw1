@@ -21,8 +21,6 @@ $departureCity = $_POST['departure_city'];
 $destinationCity = $_POST['destination_city'];
 $date = $_POST['date'];
 
-
-
 $departureIATA = get_IATA_code($departureCity, $accessToken);
 $destinationIATA = get_IATA_code($destinationCity, $accessToken);
 

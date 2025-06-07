@@ -1,3 +1,15 @@
+function onBookFlightSuccess(result) {
+    console.log('Flight booked successfully:', result);
+}
+
+
+function onTextResponse(response) {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.text();
+}
+
 function bookFlight(event, flightNumber, price) {
     const bookedBtn = event.currentTarget;
     bookedBtn.textContent = 'Booked';
@@ -13,15 +25,8 @@ function bookFlight(event, flightNumber, price) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
-    .then(response => response.text())
-    .then(result => {
-        console.log('Flight booked successfully:', result);
-    })
-    .catch(error => {
-        console.error('Errore durante la prenotazione:', error);
-        bookedBtn.textContent = 'Errore';
-        bookedBtn.disabled = false;
-    });
+    .then(onTextResponse)
+    .then(onBookFlightSuccess);
 }
 
 
@@ -31,6 +36,37 @@ function handleError(error) {
     console.error('Errore fetch:', error);
 }
 
+function handleResponse(response) {
+    if (!response.ok) {
+        throw new Error('Errore nella risposta del server');
+    }
+    return response.json();
+}
+
+function onCheckFlightResult(flightNumber, price, bookBtn) {
+    return function(result) {
+        if (result.success) {
+            bookBtn.textContent = "Book now";
+            bookBtn.addEventListener('click', function(event) {
+                bookFlight(event, flightNumber, price);
+            });
+        } else {
+            bookBtn.textContent = "Booked";
+        }
+    };
+}
+
+function checkFlightAvailability(flightNumber, price, bookBtn) {
+    const data = { flight_id: flightNumber };
+
+    fetch('check_flight.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(handleResponse)
+    .then(onCheckFlightResult(flightNumber, price, bookBtn));
+}
 
 function handleResult(flights) {
     const flightResult = document.getElementById('flight-result');
@@ -95,38 +131,13 @@ function handleResult(flights) {
         const bookBtn = document.createElement('button');
         bookBtn.classList.add('book-button');
 
-        const data = { flight_id: flightNumber };
-
-        fetch('check_flight.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        }).then(response => response.json())
-          .then(result => {
-            if (result.success) {
-                bookBtn.textContent = "Book now";
-                bookBtn.addEventListener('click', (event) => {
-                bookFlight(event, flightNumber, price);
-            });
-            } else {
-                bookBtn.textContent = "Booked";
-            }
-        }).catch(error => {
-            console.error('Error:', error);
-            });
+        checkFlightAvailability(flightNumber, price, bookBtn);
 
         flightContent.appendChild(infoDiv);
         flightContent.appendChild(bookBtn);
         flightDiv.appendChild(flightContent);
         flightResult.appendChild(flightDiv);
     }
-}
-
-function handleResponse(response) {
-    if (!response.ok) {
-        throw new Error('Errore nella risposta del server');
-    }
-    return response.json();
 }
 
 function handleFlightSearch(event) {

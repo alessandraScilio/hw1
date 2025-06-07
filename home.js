@@ -1,5 +1,5 @@
 function getFlightPage() {
-        window.location.href = 'articles.php';
+    window.location.href = 'articles.php';
 }
 
 function createArticleCard(post) {
@@ -16,11 +16,38 @@ function createArticleCard(post) {
     articleCard.appendChild(postTitle);
 
     const postContent = document.createElement('p');
-    postContent.textContent = post.content.length > 150 ? post.content.substring(0,100) + '...' : post.content;
+    postContent.textContent = post.content.length > 150 ? post.content.substring(0, 100) + '...' : post.content;
     articleCard.appendChild(postContent);
+
     articleCard.addEventListener('click', getFlightPage);
 
     return articleCard;
+}
+
+function onResponse(response) {
+    if (!response.ok) {
+        throw new Error('Errore nella risposta del server');
+    }
+    return response.json();
+}
+
+function onJson(posts) {
+    const container = document.getElementById('articles-grid');
+
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    if (posts.error) {
+        throw new Error(posts.error);
+    }
+
+     for (let i = 0; i < posts.length; i++) {
+        const post = posts[i];
+        const articleCard = createArticleCard(post);
+        container.appendChild(articleCard);
+    }
+
 }
 
 function loadPopularPosts() {
@@ -30,26 +57,8 @@ function loadPopularPosts() {
     container.innerHTML = '';
 
     fetch('getPopularPosts.php')
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error('Errore nella risposta del server');
-            }
-            return response.json();
-        })
-        .then(function(posts) {
-            if (posts.error) {
-                throw new Error(posts.error);
-            }
-
-            posts.forEach(function(post) {
-                const articleCard = createArticleCard(post);
-                container.appendChild(articleCard);
-            });
-        })
-        .catch(function(error) {
-            container.innerHTML = `<p class="error">Errore: ${error.message}</p>`;
-        });
+        .then(onResponse)
+        .then(onJson);
 }
-
 
 document.addEventListener('DOMContentLoaded', loadPopularPosts);
