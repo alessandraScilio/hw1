@@ -23,6 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My account</title>
   <link rel="stylesheet" href="account.css"/>
+  <link rel="stylesheet" href="commons.css"/>
   <script src="account.js" defer></script> 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
@@ -68,6 +69,26 @@
         <h2>Your flight offers</h2>
         <div id="bookings-container"></div>
     </section>
+
+
+    <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>TravelHub</h3>
+      <p>Your gateway to unforgettable journeys. Discover, plan, and share travel experiences.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">Articles</a>
+      <a href="#">Flights</a>
+      <a href="#">Hotels</a>
+      <a href="#">Account</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 TravelHub. All rights reserved.
+  </div>
+</footer>
 
 
 </body>

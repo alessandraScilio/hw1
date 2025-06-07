@@ -21,6 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TravelHub - Home</title>
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="commons.css"/>
   <script src="home.js" defer></script> 
 </head>
 <body>

@@ -21,6 +21,7 @@
     <meta charset="UTF-8">
     <title>TravelHub - Flights</title>
     <link rel="stylesheet" href="flights.css">
+    <link rel="stylesheet" href="commons.css"/>
    <script src="flights.js" defer></script> 
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
   </head>
@@ -65,6 +66,25 @@
 
     <div id="flight-result"></div>
   </section>
+
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>TravelHub</h3>
+      <p>Your gateway to unforgettable journeys. Discover, plan, and share travel experiences.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">Articles</a>
+      <a href="#">Flights</a>
+      <a href="#">Hotels</a>
+      <a href="#">Account</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 TravelHub. All rights reserved.
+  </div>
+</footer>
 
 </body>
 </html>
